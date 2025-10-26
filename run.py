@@ -7,6 +7,7 @@ from typing import Dict, Any
 
 from src.orchestrator.graph import build_agent_graph, save_outputs
 
+
 def load_config() -> Dict[str, Any]:
     """Loads config.yaml."""
     try:
