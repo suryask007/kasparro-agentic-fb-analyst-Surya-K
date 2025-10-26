@@ -1,0 +1,20 @@
+llm:
+  model_name: "gemini-2.5-flash-lite" 
+  temperature: 0.1
+
+analysis:
+  # Minimum confidence score from Evaluator to accept a hypothesis
+  min_confidence_threshold: 0.7 
+  # Top N low-CTR campaigns to focus on for creative generation
+  creative_gen_top_n: 3 
+
+system:
+  random_seed: 42
+  use_sample_data: true # Flag for full/sample switch [cite: 56]
+
+paths:
+  sample_data: "data/sample_fb_ads.csv"
+  full_data: "data/synthetic_fb_ads_undergarments.csv" 
+  reports: "reports/"
+  prompts: "prompts/"
+  logs: "logs/"

@@ -1,0 +1,77 @@
+{
+  "user_query": "Analyze ROAS drop in last 7 days",
+  "plan": [
+    "Load the full dataset of Facebook Ads performance metrics.",
+    "Analyze the ROAS trend over the last 7 days and identify the specific period of the drop.",
+    "Break down ROAS by campaign, ad set, and ad to pinpoint which segments are most affected.",
+    "Examine key metrics such as CTR, CPC, Conversion Rate, and Average Order Value for the affected segments during the drop period.",
+    "Formulate hypotheses for the ROAS drop, considering factors like seasonality, increased competition, creative fatigue, or changes in targeting.",
+    "Quantitatively evaluate each hypothesis using the loaded data.",
+    "If creative fatigue is identified as a likely cause, generate new ad creative suggestions for the underperforming ad sets."
+  ],
+  "data_summary": "Analysis for query: 'Analyze ROAS drop in last 7 days'\nPeriod Analyzed: 2025-03-25 to 2025-03-31 (vs. 2025-03-18 to 2025-03-24)\n\n--- Overall Performance ---\n- **ROAS**:    4.78 (vs 7.47) (-36.0%)\n- **Revenue**: $37,879 (vs $44,356) (-14.6%)\n- **Spend**:   $7,918 (vs $5,936) (+33.4%)\n- **CTR**:     0.0157 (vs 0.0151) (+4.1%)\n- **CR (Conv. Rate)**: 0.0201 (vs 0.0262) (-23.1%)\n\n--- Top Campaign ROAS Decliners ---\n- **Men Comfortmax Launch**: ROAS dropped by **-75.5%** (from 9.18 to 2.25). Spend: $1317. CTR: 0.0170.\n- **Men_ComfortMax_Launch**: ROAS dropped by **-58.6%** (from 8.89 to 3.68). Spend: $1415. CTR: 0.0123.\n- **MEN COMFORTMAX LAUNCH**: ROAS dropped by **-37.0%** (from 4.16 to 2.62). Spend: $2046. CTR: 0.0153.\n\n--- Top Audience CTR Decliners (Potential Fatigue) ---\n- **Lookalike**: CTR dropped by **-12.4%** (from 0.0186 to 0.0163). Spend: $2496. ROAS: 4.46.\n- **Broad**: CTR dropped by **17.1%** (from 0.0131 to 0.0153). Spend: $5422. ROAS: 4.93.\n\n--- Low-CTR Campaigns Identified for Creative Review ---\nMen ComfortMax Launch, Men_ComfortMax_Launch, MEN COMFORTMAX LAUNCH",
+  "hypotheses": [
+    {
+      "hypothesis": "The significant ROAS drop is primarily driven by creative fatigue in the \"Men Comfortmax Launch\" campaigns, as indicated by the low CTRs and substantial ROAS decline across these specific campaigns.",
+      "confidence": 0.9,
+      "data_needed_for_validation": "Analyze CTR and Conversion Rate trends for \"Men Comfortmax Launch\", \"Men_ComfortMax_Launch\", and \"MEN COMFORTMAX LAUNCH\" campaigns over the analyzed period.",
+      "evidence": "CONFIRMED: 'Men ComfortMax Launch' ROAS dropped by **-25.1%** (from 4.86 to 3.64)."
+    },
+    {
+      "hypothesis": "Audience fatigue may be contributing to the ROAS decline, particularly for the 'Lookalike' audience, which shows a noticeable drop in CTR. This suggests that the audience may be seeing the ads too frequently or are no longer as responsive.",
+      "confidence": 0.1,
+      "data_needed_for_validation": "Investigate the frequency and CTR trends for the 'Lookalike' audience. Also, check ROAS and Conversion Rate trends for this audience to confirm if the lower CTR is impacting overall performance.",
+      "evidence": "REJECTED: Audience 'Lookalike' CTR change (-12.4%) was not a significant drop. (from 0.0186 to 0.0163)."
+    },
+    {
+      "hypothesis": "The overall increase in spend (+33.4%) coupled with a significant drop in revenue (-14.6%) and ROAS (-36.0%) suggests a potential inefficiency in how the budget was allocated or scaled during the period. More spend was put into campaigns that are now underperforming.",
+      "confidence": 0.1,
+      "data_needed_for_validation": "Analyze spend and ROAS trends by campaign and audience to identify where the increased budget was allocated and how it correlated with performance declines.",
+      "evidence": "Could not identify a valid campaign name in hypothesis."
+    },
+    {
+      "hypothesis": "The conversion rate (CR) drop of 23.1% indicates that even if users are clicking, they are less likely to convert. This could be due to issues with the landing page, the offer, or a mismatch between the ad and the landing page experience for the targeted audiences.",
+      "confidence": 0.1,
+      "data_needed_for_validation": "Examine landing page performance metrics (e.g., bounce rate, time on page) and conversion rates segmented by campaign and audience. Also, review the offer details and ad-to-landing page alignment.",
+      "evidence": "No specific validation logic found for this hypothesis type."
+    }
+  ],
+  "validated_insights": [
+    {
+      "hypothesis": "The significant ROAS drop is primarily driven by creative fatigue in the \"Men Comfortmax Launch\" campaigns, as indicated by the low CTRs and substantial ROAS decline across these specific campaigns.",
+      "confidence": 0.9,
+      "data_needed_for_validation": "Analyze CTR and Conversion Rate trends for \"Men Comfortmax Launch\", \"Men_ComfortMax_Launch\", and \"MEN COMFORTMAX LAUNCH\" campaigns over the analyzed period.",
+      "evidence": "CONFIRMED: 'Men ComfortMax Launch' ROAS dropped by **-25.1%** (from 4.86 to 3.64)."
+    }
+  ],
+  "low_ctr_campaigns": [
+    "Men ComfortMax Launch",
+    "Men_ComfortMax_Launch",
+    "MEN COMFORTMAX LAUNCH"
+  ],
+  "creative_recommendations": [
+    {
+      "campaign_name": "Winter_Sale_Broad",
+      "new_headlines": [
+        "Don't Miss Out: Winter Sale Ends Soon!",
+        "Last Chance for Cozy Savings!"
+      ],
+      "new_messages": [
+        "Grab your favorite winter essentials at unbeatable prices. Limited time only.",
+        "Stay warm and stylish for less. Shop the Winter Sale before it's gone!"
+      ],
+      "new_ctas": [
+        "Shop Now",
+        "Grab Yours"
+      ]
+    }
+  ],
+  "log": [
+    "Planner: Generating plan.",
+    "Data Agent: Loading data.",
+    "Data Agent: Summarizing data for insights.",
+    "Insight Agent: Generating hypotheses.",
+    "Evaluator Agent: Validating hypotheses.",
+    "Creative Agent: Generating recommendations."
+  ]
+}
